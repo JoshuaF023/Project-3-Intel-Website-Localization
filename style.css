@@ -1,0 +1,169 @@
+/* Add your CSS here */
+
+/* Font Face */
+@font-face {
+  font-family: 'Neo Sans';
+  src: url('fonts/NeoSans-Bold.woff2') format('woff2'),
+       url('fonts/NeoSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Hero Section Styles */
+header {
+  /* Intel blue gradient background */
+  background: linear-gradient(90deg, #21a9e1 0%, #0071c5 100%);
+  /* Make header take full width and remove default margin */
+  width: 100vw;
+  margin: 0;
+  /* Add space above and below */
+  padding: 40px 0;
+  /* Center all content */
+  text-align: center;
+  /* Remove left/right padding from body */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  font-family: 'Neo Sans', Arial, sans-serif;
+  font-weight: bold;
+}
+
+header img {
+  /* Set logo width and keep aspect ratio */
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px; /* Space below logo */
+}
+
+header h1 {
+  /* Large, bold headline */
+  color: #fff; /* White text for contrast */
+  font-size: 2.5em;
+  margin: 10px 0 15px 0;
+}
+
+header p {
+  /* Subheading style */
+  color: #ffffff; /* Light gray for softer contrast */
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto;
+  font: neo sans, bold;
+}
+
+body {
+  /* Remove default margin from body */
+  margin: 0;
+  padding: 0;
+}
+
+/* Center all paragraphs by default */
+p {
+  text-align: center;
+}
+
+/* End of Hero Section Styles */
+
+/* Timeline Cards Section Styles */
+section {
+  /* Add some space above and below the timeline */
+  margin: 40px 0;
+  /* Prevent horizontal scroll on small screens by default */
+  overflow-x: visible;
+}
+
+section .timeline-cards {
+  /* Use flexbox for horizontal scrolling on large screens */
+  display: flex;
+  flex-direction: row;
+  gap: 24px; /* Space between cards */
+  overflow-x: auto;
+  padding: 20px 0;
+  /* Hide scrollbar for a cleaner look (optional) */
+  scrollbar-width: thin;
+  scrollbar-color: #0071c5 #e0e0e0;
+}
+
+section .timeline-card {
+  /* Card background and border */
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  /* Consistent font and color */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  /* Card size */
+  min-width: 260px;
+  max-width: 300px;
+  flex: 0 0 260px;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section .timeline-card:hover {
+  /* Simple hover effect */
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 113, 197, 0.2);
+  border-color: #0071c5;
+}
+
+section .timeline-card h2 {
+  color: #0071c5;
+  font-size: 1.3em;
+  margin: 0 0 6px 0;
+}
+
+section .timeline-card h3 {
+  color: #222;
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+}
+
+section .timeline-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+section .timeline-card p {
+  font-size: 1em;
+  color: #444;
+}
+
+/* Reveal extra details on card hover */
+.timeline-card .extra-detail {
+  /* Hide by default */
+  display: none;
+  color: #0071c5;
+  font-size: 0.98em;
+  margin-top: 10px;
+  background: #f0f8ff;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.timeline-card:hover .extra-detail {
+  /* Show on hover */
+  display: block;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section .timeline-cards {
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: visible;
+  }
+  section .timeline-card {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* End of Timeline Cards Section Styles */
